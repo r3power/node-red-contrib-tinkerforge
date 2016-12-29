@@ -33,6 +33,7 @@
       "temperature": "bricklets/Temperature.js",
       "co2": "bricklets/CO2.js",
       "ambilight": "bricklets/AmbientLight.js",
+      "ambilightv2": "bricklets/AmbientLightv2.js",
       "digiin": "bricklets/IndDigital4In.js",
       "inddualanalogin": "bricklets/IndDualAnalogIn.js",
       "analogout": "bricklets/AnalogOut.js",

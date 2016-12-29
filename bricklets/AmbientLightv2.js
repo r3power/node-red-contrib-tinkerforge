@@ -20,7 +20,7 @@ var Tinkerforge = require('tinkerforge');
 var devices = require('../lib/devices');
 
 module.exports = function(RED) {
-	function tinkerForgeAmbientLight(n) {
+	function tinkerForgeAmbientLightv2(n) {
         RED.nodes.createNode(this,n);
 
         this.device = n.device;
@@ -41,7 +41,7 @@ module.exports = function(RED) {
 
         node.ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
         function(connectReason) {
-            node.al = new Tinkerforge.BrickletAmbientLight(node.sensor, node.ipcon);
+            node.al = new Tinkerforge.BrickletAmbientLightV2(node.sensor, node.ipcon);
             node.interval = setInterval(function(){
                 if (node.al) {
                     node.al.getIlluminance(function(lux) {
@@ -64,5 +64,5 @@ module.exports = function(RED) {
         });
     }
 
-    RED.nodes.registerType('TinkerForge AmbientLight', tinkerForgeAmbientLight);
+    RED.nodes.registerType('TinkerForge AmbientLight v2', tinkerForgeAmbientLightv2);
 }
